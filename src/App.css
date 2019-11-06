@@ -1,0 +1,33 @@
+
+header{
+  height: 120px;
+  background-color: skyblue;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+nav{
+  height: 60px;
+  background-color: blueviolet;
+  text-align: center;
+}
+div.daemori{
+  display: flex;
+  height: 360px;
+  text-align: center;
+}
+section{
+  width: 80%;
+  background-color: steelblue;
+  text-align: center;
+}
+aside{
+  width: 20%;
+  background-color: teal;
+  text-align: center;
+}
+footer{
+  height: 60px;
+  background-color: blueviolet;
+  text-align: center;
+}
