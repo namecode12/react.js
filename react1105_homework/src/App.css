@@ -1,0 +1,53 @@
+header{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 30px;
+}
+ul{
+  list-style: none;
+  display: flex; 
+}
+#login{
+  background-color: blue;
+  color: white;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+li{
+  padding: 5px;
+}
+#main{
+  flex-direction: column;
+  margin: 89px;
+  padding: 109px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo{
+  margin-bottom: 56px;
+}
+input{
+  border: none;
+}
+#searchbar{
+  height: 32px;
+  width: 640px;
+  border: 1px solid gray;
+  border-radius: 40px;
+}
+#box{
+  display: flex;
+  flex-direction: row;
+}
+#search{
+  background-color: gray;
+  margin: 36px;
+}
+#Lucky{
+  background-color: gray;
+  margin: 36px;
+}
