@@ -86,7 +86,8 @@ class App extends React.Component{
     super(props);
 
     this.state={
-      items: []
+      items: [],
+      value: ""
     };
     // const value = prompt("초기값 입력") * 1;
     // this.state = {
@@ -99,8 +100,10 @@ class App extends React.Component{
     items.push("item")
     this.setState({
       items
-    })
-  }
+    });
+  };
+
+
   render() {
     return <>
       <input type="text"/>

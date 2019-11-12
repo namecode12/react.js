@@ -11,27 +11,43 @@ const Div = styled.div`
   height: 100vh;
   background-color: pink;
 `;
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      value: '',
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        items: [],
+        value: ""
+      };
+    }
+  
+    onChange = e => {
+      this.setState({ value: e.target.value });
     };
-  }
+  
+    onClickAdd = e => {
+      const items = this.state.items;
+      items.push(this.state.value);
+      this.setState({
+        items
+      });
+      console.log(this.state.items)
+    };
+  
+    onClickDel = idx => {
+      const items = this.state.items;
+      this.setState({
+        items: [...items.slice(0, idx), ...items.slice(idx + 1)]
+      });
+    };
 
-  onChange = e => {
-    this.setState({ value: e.target.value });
-  };
-
-  onClickAdd = e => {
-    const items = this.state.items;
-    items.push(this.state.value);
-    this.setState({
-      items,
-    });
-  };
-
+    onClickChange = (idx,value) => {
+      const newItems = [
+        ...this.state.items.slice(0,idx),
+        value,
+        ...this.state.items.slice(idx + 1)
+      ]
+      this.setState({items:newItems})
+    };
   render() {
     return (
       <>
@@ -48,7 +64,14 @@ class App extends React.Component {
           </div>
 
           {this.state.items.map((value, idx) => (
-            <TodoItem key={idx} value={value} />
+            <TodoItem 
+            onClickDel={() =>this.onClickDel(idx)}
+            onClickChange={() =>{
+              const value = prompt("수정값 입력");
+              this.onClickChange(idx,value);
+            }}
+             key={Math.random()}
+             value={value} />
           ))}
         </Div>
       </>
